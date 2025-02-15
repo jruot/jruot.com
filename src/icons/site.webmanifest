@@ -1,6 +1,6 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Joonas Ruotsalainen - jruot.com",
+  "short_name": "jruot.com",
   "icons": [
     {
       "src": "/icons/web-app-manifest-192x192.png",
