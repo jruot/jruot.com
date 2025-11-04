@@ -198,6 +198,21 @@
 						</ul>
 					</div>
 				</div>
+				<div class="content-section">
+					<div class="content-container">
+						<h2 class="mainblue">Keeping AI-Generated Code Maintainable</h2>
+						<p>While LLMs make writing code easier, I have found that keeping it maintainable requires a disciplined approach. Here are some of the practices I follow to keep my AI-generated codebases clean and easy to manage:</p>
+						<ul>
+							<li><b>Versioned prompts:</b> Save useful feature prompts in files. Version them.</li>
+							<li><b>Automatic formatting:</b> Use automated formatting tools such as Prettier, ESLint, or clang so the model focuses on logic, not layout.</li>
+							<li><b>Linting and type checks:</b> Run static analysis after each AI change. Catch unused variables, missing types, and unsafe imports early.</li>							<li><b>Constant code review:</b> Treat every AI change like a pull request from a junior developer. Read diffs and ask the model to explain decisions before merging.</li>
+							<li><b>Git discipline:</b> Commit and branch often. Small, isolated commits make it easy to revert or compare outputs.</li>
+							<li><b>Unit tests:</b> Generate them after the code works and is verified. Use tests to lock in correct behavior and prevent regressions.</li>
+							<li><b>Context hygiene:</b> Do not use AI for linting or formatting. Compact context often. Keep the context focused on reasoning and refactoring.</li>
+							<li><b>Do not be afraid to throw away AI code:</b> If it feels wrong, start over. Frequent commits make it safe to revert. Regenerating code costs seconds. Maintaining it costs hours.</li>
+						</ul>
+					</div>
+				</div>
 			</section>
 		</main>
 		<footer>
