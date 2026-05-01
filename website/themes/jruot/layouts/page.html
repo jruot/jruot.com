@@ -76,7 +76,6 @@
         </label>
         {{- with $contact.turnstileSiteKey }}
           <div class="cf-turnstile" data-sitekey="{{ . }}" data-action="contact"></div>
-          <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
         {{- end }}
         <button class="button primary" type="submit">Send message</button>
         <p class="form-note">Your message is protected by Cloudflare Turnstile.</p>

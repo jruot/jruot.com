@@ -1,5 +1,5 @@
 baseURL = 'https://jruot.com/'
-languageCode = 'en-US'
+locale = 'en-US'
 title = 'Joonas Ruotsalainen'
 theme = 'jruot'
 pagination.pagerSize = 10
@@ -14,6 +14,8 @@ buildFuture = true
   profileImage = '/profile.png'
   profileImageWebp = '/profile.webp'
   ogImageAlt = 'Portrait of Joonas Ruotsalainen'
+  ogImageWidth = 420
+  ogImageHeight = 420
   themeColor = '#0d1117'
   twitterCard = 'summary_large_image'
   robots = 'index,follow'

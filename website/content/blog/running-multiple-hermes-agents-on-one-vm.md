@@ -102,4 +102,4 @@ sudo chmod -R go-rwx /home/auditron
 
 I recommend giving each agent its own API keys and credentials. This makes it easier to track token usage per agent and revoke access for one agent without affecting the others.
 
-For more on this and other agent tools, see [AI tools I recommend](http://localhost:1313/blog/ai-tools-i-recommend/).
+For more on this and other agent tools, see [AI tools I recommend]({{< relref "/blog/ai-tools-i-recommend" >}}).

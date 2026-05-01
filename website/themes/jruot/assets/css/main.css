@@ -215,17 +215,6 @@ img {
   transform: translateY(-1px);
 }
 
-.button.ghost {
-  border-color: var(--surface-strong);
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.04);
-}
-
-.hero-links {
-  display: flex;
-  gap: 1rem;
-}
-
 .text-link {
   color: var(--accent);
   font-weight: 600;
@@ -279,33 +268,9 @@ img {
   font-size: clamp(1.4rem, 0.9vw + 1rem, 1.8rem);
 }
 
-.post-list {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.post-card {
-  padding: 1.5rem;
-  border-radius: var(--radius);
-  background: var(--surface);
-  border: 1px solid var(--border);
-}
-
-.post-card h2,
-.post-card h3 {
-  margin: 0.3rem 0 0.6rem;
-  font-family: "Fraunces", "Manrope", serif;
-}
-
 .post-meta {
   font-size: 0.85rem;
   color: var(--muted);
-}
-
-.post-summary {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.6;
 }
 
 .page-hero {
@@ -324,11 +289,6 @@ img {
 .page-hero h1 {
   font-family: "Fraunces", "Manrope", serif;
   margin-bottom: 0.8rem;
-}
-
-.page-intro {
-  color: var(--muted);
-  font-size: 1.05rem;
 }
 
 .page-content {
@@ -389,6 +349,7 @@ img {
   border-radius: var(--radius-sm);
   overflow: hidden;
   position: relative;
+  background: var(--surface-strong);
 }
 
 .page-content .highlight pre {
