@@ -1,0 +1,43 @@
+baseURL = 'https://jruot.com/'
+languageCode = 'en-US'
+title = 'Joonas Ruotsalainen'
+theme = 'jruot'
+pagination.pagerSize = 10
+disableKinds = ['taxonomy', 'term', 'RSS']
+buildFuture = true
+
+[params]
+  description = 'Joonas Ruotsalainen - A full-stack developer and DevOps engineer'
+  author = 'Joonas Ruotsalainen'
+  jobTitle = 'Full-stack developer & DevOps engineer'
+  email = 'j@jruot.com'
+  profileImage = '/profile.png'
+  profileImageWebp = '/profile.webp'
+  ogImageAlt = 'Portrait of Joonas Ruotsalainen'
+  themeColor = '#0d1117'
+  twitterCard = 'summary_large_image'
+  robots = 'index,follow'
+
+  [params.social]
+    github = 'https://github.com/jruot'
+    linkedin = 'https://linkedin.com/in/joonasruotsalainen'
+
+  [params.analytics]
+    umamiURL = 'https://umami.jruot.com/script.js'
+    umamiID = '572530d4-45a7-49ca-87ab-8f09c70f600d'
+
+  [params.contact]
+    endpoint = '/v1/contact/jruot/'
+    localEndpoint = 'http://127.0.0.1:8787/v1/contact/jruot-local/'
+    turnstileSiteKey = '0x4AAAAAACcNyv_-WJB8ZZ6T'
+
+[menus]
+  [[menus.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+
+  [[menus.main]]
+    name = 'Contact'
+    pageRef = '/contact'
+    weight = 30

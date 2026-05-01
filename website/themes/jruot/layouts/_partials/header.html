@@ -1,0 +1,6 @@
+<div class="site-header-inner{{ if .IsHome }} is-home{{ end }}">
+  {{- if not .IsHome }}
+    <a class="site-title" href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a>
+  {{- end }}
+  {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+</div>

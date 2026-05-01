@@ -1,0 +1,87 @@
+{{ define "main" }}
+  <article class="page">
+    <header class="page-hero">
+      <h1>{{ .Title }}</h1>
+      {{- if eq .Section "blog" }}
+        {{- $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+        {{- $dateHuman := .Date | time.Format ":date_long" }}
+        <time datetime="{{ $dateMachine }}" class="post-meta">{{ $dateHuman }}</time>
+      {{- end }}
+    </header>
+
+    <div class="page-content">
+      {{ .Content }}
+    </div>
+
+    {{- if eq .Section "blog" }}
+      <section class="author-card">
+        <p class="author-card-eyebrow">About the author</p>
+        <h2 class="author-card-title">{{ site.Title }}</h2>
+        {{- with site.Params.jobTitle }}
+          <p class="author-card-role">{{ . }}</p>
+        {{- end }}
+        <p class="author-card-copy">If you want to collaborate or discuss a project, I would love to hear from you.</p>
+        <div class="author-card-actions">
+          <a class="button primary" href="/contact/">Contact me</a>
+        </div>
+      </section>
+
+      {{- $newer := .NextInSection }}
+      {{- $older := .PrevInSection }}
+      {{- if or $newer $older }}
+        <nav class="post-nav" aria-label="Post navigation">
+          {{- if $older }}
+            <a class="post-nav-link post-nav-older" href="{{ $older.RelPermalink }}">
+              <span class="post-nav-label">Older post</span>
+              <span class="post-nav-title">{{ $older.LinkTitle }}</span>
+            </a>
+          {{- end }}
+          {{- if $newer }}
+            <a class="post-nav-link post-nav-newer" href="{{ $newer.RelPermalink }}">
+              <span class="post-nav-label">Newer post</span>
+              <span class="post-nav-title">{{ $newer.LinkTitle }}</span>
+            </a>
+          {{- end }}
+        </nav>
+      {{- end }}
+    {{- end }}
+
+    {{- if .Params.form }}
+      {{- $contact := site.Params.contact }}
+      <p class="form-status" role="status" aria-live="polite"></p>
+      <form
+        class="contact-form js-contact-form"
+        method="post"
+        action="{{ with $contact.endpoint }}{{ . }}{{ else }}#{{ end }}"
+        data-contact-endpoint="{{ with $contact.endpoint }}{{ . }}{{ else }}{{ end }}"
+        data-contact-local-endpoint="{{ with $contact.localEndpoint }}{{ . }}{{ else }}{{ end }}"
+      >
+        <div class="form-grid">
+          <label>
+            Name
+            <input type="text" name="name" autocomplete="name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+        </div>
+        <label>
+          Message
+          <textarea name="message" rows="6" required></textarea>
+        </label>
+        <label class="contact-hp" aria-hidden="true">
+          Company
+          <input type="text" name="company" tabindex="-1" autocomplete="off">
+        </label>
+        {{- with $contact.turnstileSiteKey }}
+          <div class="cf-turnstile" data-sitekey="{{ . }}" data-action="contact"></div>
+          <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+        {{- end }}
+        <button class="button primary" type="submit">Send message</button>
+        <p class="form-note">Your message is protected by Cloudflare Turnstile.</p>
+      </form>
+    {{- end }}
+
+  </article>
+{{ end }}

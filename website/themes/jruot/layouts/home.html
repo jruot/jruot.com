@@ -1,0 +1,58 @@
+{{ define "main" }}
+  <section class="hero">
+    <div class="hero-media">
+      <picture>
+        {{- with site.Params.profileImageWebp }}
+          <source srcset="{{ . }}" type="image/webp">
+        {{- end }}
+        <img
+          src="{{ site.Params.profileImage }}"
+          alt="{{ site.Params.ogImageAlt }}"
+          width="420"
+          height="420"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+      </picture>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">{{ site.Title }}</h1>
+      {{- with site.Params.jobTitle }}
+        <p class="eyebrow">{{ . }}</p>
+      {{- end }}
+      <div class="hero-text">
+        {{ .Content }}
+      </div>
+      <div class="hero-actions">
+        <a class="button primary" href="/contact/">Contact</a>
+        {{- with site.Params.social.github }}
+          <a class="text-link" href="{{ . }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+        {{- end }}
+        {{- with site.Params.social.linkedin }}
+          <a class="text-link" href="{{ . }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        {{- end }}
+      </div>
+    </div>
+  </section>
+
+  <section class="latest">
+    <div class="section-header">
+      <h2>Latest writing</h2>
+    </div>
+    {{- $posts := where site.RegularPages "Section" "blog" }}
+    {{- if gt (len $posts) 0 }}
+      <ul class="latest-list">
+        {{- range $posts }}
+          <li>
+            <span class="post-meta">{{ .Date | time.Format ":date_long" }}</span>
+            <span class="latest-separator">·</span>
+            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+          </li>
+        {{- end }}
+      </ul>
+    {{- else }}
+      <p class="empty-state">New posts are on the way.</p>
+    {{- end }}
+  </section>
+{{ end }}
