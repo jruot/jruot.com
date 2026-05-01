@@ -4,13 +4,21 @@ date = 2026-02-01T08:00:00-07:00
 draft = false
 +++
 
-I build scalable cloud applications and distributed systems, with a focus on pragmatic engineering and clean delivery.
-If you are hiring or want to collaborate, the contact page is the fastest way to reach me.
+I build cloud-native applications, distributed systems, and practical automation for software teams.
+My work spans full-stack product engineering, DevOps, Kubernetes, GCP, and AWS.
 
-**Programming languages:** JavaScript, Node.js, TypeScript, Golang, C++, Python
+I focus on AI agents and automation workflows that reduce manual work in software engineering, reporting, support, and business operations.
 
-**Technologies:** Kubernetes, Terraform, Ansible, React, MongoDB, PostgreSQL, LLM, DevOps, Linux, blockchain
+**Programming:** TypeScript, JavaScript, Go, Python, Bash, C++
 
-**Cloud:** GCP, AWS
+**Cloud & Platform:** Kubernetes, GCP, AWS, Docker, Terraform, Helm, Ansible, Linux
+
+**Backend & Web:** Node.js, React, Next.js, Express.js
+
+**Databases:** PostgreSQL, MongoDB, Redis, MySQL/MariaDB
+
+**CI/CD & Monitoring:** GitHub Actions, CircleCI, Jenkins, Cloud Build, Prometheus, Grafana
+
+**AI/LLM Tools:** Aider, Gemini CLI, OpenClaw, Hermes Agent, OpenAI, Claude, Vertex AI, OpenWebUI
 
 **Education:** M.Eng in Modern Software and Computing Solutions
