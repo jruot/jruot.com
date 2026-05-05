@@ -12,6 +12,14 @@ This lets the operating system enforce the isolation boundary. Each agent gets a
 
 This saves on hosting costs compared to giving each agent its own VM, but the isolation is not as strong.
 
+## The Built-in Option: Profiles
+
+Hermes has a built-in [profiles](https://hermes-agent.nousresearch.com/docs/user-guide/profiles/) feature that lets you run multiple agents from a single install. Each profile gets its own config, API keys, memory, sessions, skills, gateway, and state database. You create one with `hermes profile create coder` and it immediately gives you a `coder` command alias with its own chat, setup, and gateway.
+
+Profiles are the quickest way to run multiple agents on one machine. They separate agent data at the application level, not the OS level. All profiles share the same UID, home directory, and process namespace. If one agent writes garbage to disk or consumes all the memory, the others have no kernel-level protection.
+
+For trusted agents on a personal machine, profiles are enough. When you want real isolation between agents, especially on a shared server, use separate OS users instead.
+
 ## Create One User Per Agent
 
 Create a dedicated OS account for each agent:
